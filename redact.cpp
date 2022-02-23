@@ -18,6 +18,8 @@ int main(int argc, char* argv[]) {
 	}
 	string in = argv[1];
 	ifstream fin(in);
+	if(!fin.good()) {cout<<"Error: No such file"<<endl; return 1;}
+	//ensure that file exists
 	string type = argv[2];
 	string target_word = argv[3];
 	ofstream fout(in + "_REDACTED_" + target_word+"."+type);
